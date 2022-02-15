@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">JogoDaVelha</string>
+    <string name="player_one"> primeiro jogador</string>
+    <string name="player_two"> segundo jogador</string>
+    <string name="insira_nomes"> Insira o nome dos jogadores</string>
+    <string name="inicio"> inicio</string>
+    <string name="jogo"> Continuar partida</string>
+    <string name="configs"> config</string>
+    <string name="jogar"> JOGAR!</string>
+    <string name="novoJogo"> NOVO JOGO</string>
+    <string name="tela_inicial"> Tela inicial</string>
+    <string name="jogo_status"> Jogo</string>
+    <string name="config"> Configurações </string>
+    <string name="slot1"> campo 1 </string>
+    <string name="slot2"> campo 2 </string>
+    <string name="slot3"> campo 3 </string>
+    <string name="slot4"> campo 4 </string>
+    <string name="slot5"> campo 5 </string>
+    <string name="slot6"> campo 6 </string>
+    <string name="slot7"> campo 7 </string>
+    <string name="slot8"> campo 8 </string>
+    <string name="slot9"> campo 9 </string>
+    <string name="bola"> bola </string>
+    <string name="xis"> xis </string>
+    <string name="insira_jog1"> Jogador 1 </string>
+    <string name="insira_jog2"> Jogador 2 </string>
+    <string name="iniciar_partida"> Iniciar Partida </string>
+    <string name="nome_jogo"> Jogo da velha </string>
+
+</resources>

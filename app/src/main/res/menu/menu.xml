@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:iconTint="@color/white"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:contentDescription=""/>
+    <item
+        android:id="@+id/game"
+        android:title="Game"
+        android:iconTint="@color/white"
+        android:icon="@drawable/ic_baseline_play_arrow_24"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Configs"
+        android:iconTint="@color/white"
+        android:icon="@drawable/ic_baseline_settings_24"/>
+
+</menu>

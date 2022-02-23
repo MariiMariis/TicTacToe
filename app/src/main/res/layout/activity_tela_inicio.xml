@@ -20,16 +20,18 @@
         android:background="@drawable/tictactres"
         android:contentDescription="@string/nome_jogo"/>
 
-
-    <TextView
-        android:layout_gravity="center"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/insira_nomes"
-        android:gravity="center_vertical"
-        android:maxLines="1"
-        android:textSize="18sp"
-        android:contentDescription="@string/insira_nomes"/>
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2601036311274042/4862142969">
+    </com.google.android.gms.ads.AdView>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"

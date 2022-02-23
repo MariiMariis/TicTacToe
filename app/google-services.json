@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218681389619",
+    "project_id": "infnet-projeto-bloco-androd",
+    "storage_bucket": "infnet-projeto-bloco-androd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218681389619:android:2229462421634a8d3ae946",
+        "android_client_info": {
+          "package_name": "br.infnet.tictacapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218681389619-c0nvtpjmvq3q5378haktud67ed6bv66p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ6m0a2nBi0PzAOzkw-_JHEjEkUUnmhUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218681389619-c0nvtpjmvq3q5378haktud67ed6bv66p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

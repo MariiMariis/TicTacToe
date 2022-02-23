@@ -9,6 +9,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -34,18 +38,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var gameActive = true
 
 
+    // Dúvida como fazer a função checkWinner acessar o nome do jogador inserido na função onCreate?
+
+    var nomeJogadorUm = "Player 1"
+    var nomeJogadorDois = "Player 2"
+
+    lateinit var mAdView : AdView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        MobileAds.initialize(this) {}
 
-        val nomeJogadorUm = intent.getStringExtra("NomeJogador1")
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
+        var nomeJogadorUm = intent.getStringExtra("NomeJogador1")
 
         val message1 = findViewById<TextView>(R.id.nomeJogadorUm).apply {
             text = nomeJogadorUm
         }
 
-        val nomeJogadorDois = intent.getStringExtra("NomeJogador2")
+        var nomeJogadorDois = intent.getStringExtra("NomeJogador2")
 
         val message2 = findViewById<TextView>(R.id.nomeJogadorDois).apply {
             text = nomeJogadorDois
@@ -124,10 +142,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if(filledPos[val0] != -1){
                     gameActive = false
                     if(filledPos[val0] == player1) {
-                        showMessage("X é o vencedor!")
+                        showMessage(nomeJogadorUm + " é o vencedor!")
                     }
                     else{
-                        showMessage("O é o vencedor!")
+                        showMessage(nomeJogadorDois + " é o vencedor!")
                     }
                     return
                 }

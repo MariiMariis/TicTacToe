@@ -28,10 +28,18 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2601036311274042/4862142969">
+        ads:adUnitId="ca-app-pub-3940256099942544/1033173712">
     </com.google.android.gms.ads.AdView>
 
-
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/insira_nomes"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:contentDescription="@string/insira_nomes"/>
 
     <LinearLayout
         android:layout_width="match_parent"

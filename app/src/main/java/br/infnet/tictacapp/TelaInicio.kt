@@ -6,11 +6,25 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+
+
 
 class TelaInicio : AppCompatActivity() {
+
+    lateinit var mAdView : AdView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicio)
+
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
 
         val startGameBtn = findViewById<Button>(R.id.startGameBtn)
 

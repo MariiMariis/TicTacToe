@@ -36,10 +36,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var gameActive = true
 
 
-    // Dúvida como fazer a função checkWinner acessar o nome do jogador inserido na função onCreate?
 
-    var nomeJogadorUm = "Player 1"
-    var nomeJogadorDois = "Player 2"
 
 
 
@@ -136,10 +133,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if(filledPos[val0] != -1){
                     gameActive = false
                     if(filledPos[val0] == player1) {
-                        showMessage(nomeJogadorUm + " é o vencedor!")
+                        val nome = intent.getStringExtra("NomeJogador1")
+                        showMessage(nome + " é o vencedor!")
                     }
                     else{
-                        showMessage(nomeJogadorDois + " é o vencedor!")
+                        val nome = intent.getStringExtra("NomeJogador2")
+                        showMessage(nome + " é o vencedor!")
                     }
                     return
                 }

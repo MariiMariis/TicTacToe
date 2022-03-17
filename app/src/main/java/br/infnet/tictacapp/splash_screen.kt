@@ -16,7 +16,7 @@ class splash_screen : AppCompatActivity() {
     }
 
     fun changeToLogin() {
-        val intent = Intent(this, TelaInicio::class.java)
+        val intent = Intent(this, FirebaseLogin::class.java)
         overridePendingTransition(R.anim.fadein, R.anim.fadeout)
 
         Handler(Looper.getMainLooper()).postDelayed({

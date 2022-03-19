@@ -3,16 +3,20 @@ package br.infnet.tictacapp
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.google.android.material.bottomnavigation.BottomNavigationView
-
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+
 
     lateinit var campo1 : ImageView
     lateinit var campo2 : ImageView
@@ -37,7 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-
+    lateinit var db: FirebaseFirestore
 
 
 
@@ -45,7 +49,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        db = FirebaseFirestore.getInstance()
 
 
         var nomeJogadorUm = intent.getStringExtra("NomeJogador1")
@@ -120,6 +124,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun checkForWinner() {
+
+
+
         var winPos = arrayOf(intArrayOf(0,1,2), intArrayOf(3,4,5),intArrayOf(6,7,8),
             intArrayOf(0,3,6), intArrayOf(1,4,7), intArrayOf(2,5,8),
             intArrayOf(0,4,8,), intArrayOf(2,4,6))
@@ -128,18 +135,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             var val0 = winPos[i] [0]
             var val1 = winPos[i] [1]
             var val2 = winPos[i] [2]
+            var nome = "jogador"
 
             if(filledPos[val0] == filledPos[val1] && filledPos[val1] == filledPos[val2]){
                 if(filledPos[val0] != -1){
                     gameActive = false
                     if(filledPos[val0] == player1) {
-                        val nome = intent.getStringExtra("NomeJogador1")
+                        nome = intent.getStringExtra("NomeJogador1").toString()
                         showMessage(nome + " é o vencedor!")
                     }
                     else{
-                        val nome = intent.getStringExtra("NomeJogador2")
+                        nome = intent.getStringExtra("NomeJogador2").toString()
                         showMessage(nome + " é o vencedor!")
                     }
+                    val userDb = UserRankingModel(
+                        nome,
+                        FieldValue.increment(1)
+                    )
+                    db.collection("ranking")
+                        .add(userDb)
+                        .addOnSuccessListener {
+                            Toast.makeText(this@MainActivity, "Ranking Saved!", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this@MainActivity, "Task Not Saved", Toast.LENGTH_SHORT).show()
+                            Log.e("HA", "Error saving : Err :" + it.message)
+                        }
                     return
                 }
             }

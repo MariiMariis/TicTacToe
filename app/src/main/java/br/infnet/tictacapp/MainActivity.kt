@@ -135,32 +135,36 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             var val0 = winPos[i] [0]
             var val1 = winPos[i] [1]
             var val2 = winPos[i] [2]
-            var nome = "jogador"
+            var vencedor: String
+            var perdedor: String
 
             if(filledPos[val0] == filledPos[val1] && filledPos[val1] == filledPos[val2]){
                 if(filledPos[val0] != -1){
                     gameActive = false
                     if(filledPos[val0] == player1) {
-                        nome = intent.getStringExtra("NomeJogador1").toString()
-                        showMessage(nome + " é o vencedor!")
+                        vencedor = intent.getStringExtra("NomeJogador1").toString()
+                        perdedor = intent.getStringExtra("NomeJogador2").toString()
+
                     }
                     else{
-                        nome = intent.getStringExtra("NomeJogador2").toString()
-                        showMessage(nome + " é o vencedor!")
+                        vencedor = intent.getStringExtra("NomeJogador2").toString()
+                        perdedor = intent.getStringExtra("NomeJogador1").toString()
+
                     }
-                    val userDb = UserRankingModel(
-                        nome,
-                        FieldValue.increment(1)
+                    val resultadoDb = PartidaDbModel(
+                        vencedor,
+                        perdedor
                     )
-                    db.collection("ranking")
-                        .add(userDb)
+                    db.collection("partidas")
+                        .add(resultadoDb)
                         .addOnSuccessListener {
                             Toast.makeText(this@MainActivity, "Ranking Saved!", Toast.LENGTH_SHORT).show()
                         }
                         .addOnFailureListener {
-                            Toast.makeText(this@MainActivity, "Task Not Saved", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity, "Ranking Not Saved", Toast.LENGTH_SHORT).show()
                             Log.e("HA", "Error saving : Err :" + it.message)
                         }
+                    showMessage(vencedor + " venceu!")
                     return
                 }
             }

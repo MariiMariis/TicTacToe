@@ -30,9 +30,12 @@ class TelaInicio : AppCompatActivity() {
 
         startGameBtn.setOnClickListener {
             callAct()
+
         }
 
     }
+
+
 
     private fun callAct() {
         val playerOneName = findViewById<EditText>(R.id.playerOneName)

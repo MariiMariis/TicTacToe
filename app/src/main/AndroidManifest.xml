@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacApp">
         <activity
+            android:name=".RankingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HistoricoPartidasActivity"
+            android:exported="false"
+            android:label="@string/title_activity_historico_partidas"
+            android:theme="@style/Theme.TicTacApp.NoActionBar" />
+        <activity
             android:name=".FirebaseLogin"
             android:exported="false" />
 
@@ -28,10 +36,10 @@
         </activity>
         <activity
             android:name=".TelaInicio"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

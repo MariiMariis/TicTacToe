@@ -1,6 +1,7 @@
 package br.infnet.tictacapp
 
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -186,6 +187,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun showMessage (s: String) {
         AlertDialog.Builder(this)
             .setMessage(s)
+            .setPositiveButton("Ver O ranking", DialogInterface.OnClickListener { dialog, which ->
+                goToRanking()
+            })
             .setPositiveButton("Jogar Novamente", DialogInterface.OnClickListener { dialog, which ->
                 restartGame()
             })
@@ -209,6 +213,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         campo8.setImageResource(R.drawable.trnasp_btn_noborder)
         campo9.setImageResource(R.drawable.trnasp_btn_noborder)
 
+    }
+
+    fun goToRanking() {
+        startActivity(Intent(this@MainActivity, RankingActivity::class.java))
+        finish()
     }
 
 }

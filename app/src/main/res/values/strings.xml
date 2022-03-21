@@ -118,5 +118,6 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="element_text">Ranking</string>
+    <string name="logout">Logout</string>
 
 </resources>

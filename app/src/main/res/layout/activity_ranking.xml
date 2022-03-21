@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/list_item_height"
-    android:layout_marginLeft="@dimen/margin_medium"
-    android:layout_marginRight="@dimen/margin_medium"
-    android:gravity="center_vertical">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RankingActivity">
 
-    <TextView
-        android:id="@+id/rankingView"
-        android:layout_width="400px"
-        android:layout_height="800px"
-        android:text="@string/element_text"/>
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/refresh">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListaPartidas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

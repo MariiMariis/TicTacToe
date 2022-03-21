@@ -187,11 +187,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun showMessage (s: String) {
         AlertDialog.Builder(this)
             .setMessage(s)
-            .setPositiveButton("Ver O ranking", DialogInterface.OnClickListener { dialog, which ->
+            .setPositiveButton("Exibir Histórico", DialogInterface.OnClickListener { dialog, which ->
+             //   restartGame()
                 goToRanking()
-            })
-            .setPositiveButton("Jogar Novamente", DialogInterface.OnClickListener { dialog, which ->
-                restartGame()
             })
             .show()
     }

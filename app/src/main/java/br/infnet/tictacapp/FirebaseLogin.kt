@@ -22,6 +22,7 @@ class FirebaseLogin : AppCompatActivity() {
         if (auth.currentUser != null) {
             Toast.makeText(this@FirebaseLogin, "User Already Login", Toast.LENGTH_SHORT).show()
             goTelaInicio()
+
         }
 
         //click event for login button
@@ -36,6 +37,7 @@ class FirebaseLogin : AppCompatActivity() {
                     if (it.isSuccessful) {
                         Toast.makeText(this@FirebaseLogin, "User Login", Toast.LENGTH_SHORT)
                         goTelaInicio()
+
                     } else {
                         Toast.makeText(this@FirebaseLogin, "User Auth Failed", Toast.LENGTH_SHORT)
                             .show()
@@ -64,6 +66,7 @@ class FirebaseLogin : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         )
                         goTelaInicio()
+
                     } else {
                         Toast.makeText(this@FirebaseLogin, "User Auth Failed", Toast.LENGTH_SHORT)
                             .show()
@@ -78,6 +81,8 @@ class FirebaseLogin : AppCompatActivity() {
         startActivity(Intent(this@FirebaseLogin, TelaInicio::class.java))
         finish()
     }
+
+
 
 
 

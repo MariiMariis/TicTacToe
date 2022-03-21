@@ -9,21 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacApp">
+
         <activity
             android:name=".RankingActivity"
             android:exported="false" />
-        <activity
-            android:name=".HistoricoPartidasActivity"
-            android:exported="false"
-            android:label="@string/title_activity_historico_partidas"
-            android:theme="@style/Theme.TicTacApp.NoActionBar" />
+
         <activity
             android:name=".FirebaseLogin"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-2601036311274042~1829619665" />
 
         <activity
             android:name=".splash_screen"

@@ -37,6 +37,8 @@
         <entry key="app/src/main/res/layout/activity_tela_inicio.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.15208333333333332" />
         <entry key="app/src/main/res/layout/partida_card.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_historico_partidas.xml" value="0.1" />
       </map>
     </option>
   </component>

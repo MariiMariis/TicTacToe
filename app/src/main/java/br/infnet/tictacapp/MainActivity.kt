@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import com.google.firebase.firestore.FieldValue
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -31,6 +29,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var layoutJog1 : LinearLayout
     lateinit var layoutJog2 : LinearLayout
+
+    lateinit var goToHomeBtn : BottomNavigationItemView
+    lateinit var goToRankingBtn : BottomNavigationItemView
+    lateinit var doLogOutBtn : BottomNavigationItemView
 
 
     var player1 = 0
@@ -90,6 +92,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         campo7.setOnClickListener(this)
         campo8.setOnClickListener(this)
         campo9.setOnClickListener(this)
+
+        goToHomeBtn = findViewById(R.id.homeBtn)
+        goToRankingBtn = findViewById(R.id.rankingBtn)
+        doLogOutBtn = findViewById(R.id.logoutBtn)
+
+        goToHomeBtn.setOnClickListener {
+            goToHome()
+        }
+        goToRankingBtn.setOnClickListener {
+            goToRanking()
+        }
+        doLogOutBtn.setOnClickListener {
+            doLogOut()
+        }
     }
 
 
@@ -100,6 +116,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         var btnClick = findViewById<ImageView>(v!!.id)
         var clickedTag = Integer.parseInt(btnClick.tag.toString())
+
+
 
         if(filledPos[clickedTag]!=-1)
             return
@@ -187,9 +205,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun showMessage (s: String) {
         AlertDialog.Builder(this)
             .setMessage(s)
-            .setPositiveButton("Exibir Histórico", DialogInterface.OnClickListener { dialog, which ->
-             //   restartGame()
-                goToRanking()
+            .setPositiveButton("Jogar Novamente!", DialogInterface.OnClickListener { dialog, which ->
+                restartGame()
+             //   goToRanking()
             })
             .show()
     }
@@ -213,9 +231,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    fun goToHome() {
+        val intent = Intent(this, TelaInicio::class.java).also {
+            startActivity(it)
+        }
+    }
     fun goToRanking() {
-        startActivity(Intent(this@MainActivity, RankingActivity::class.java))
-        finish()
+        val intent = Intent(this, RankingActivity::class.java).also {
+            startActivity(it)
+        }
+    }
+    fun doLogOut() {
+        FirebaseAuth.getInstance().signOut()
+        val intent = Intent(this, splash_screen::class.java).also {
+            startActivity(it)
+        }
     }
 
 }

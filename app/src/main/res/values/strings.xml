@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JogoDaVelha</string>
+    <string name="app_name">TicTacToe</string>
     <string name="player_one"> primeiro jogador</string>
     <string name="player_two"> segundo jogador</string>
     <string name="insira_nomes"> Insira o nome dos jogadores</string>

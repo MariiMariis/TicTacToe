@@ -4,6 +4,21 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+afterEvaluate {
+    if (project.hasProperty("android.injected.signing.store.file")) {
+        println "key store path: ${project.property("android.injected.signing.store.file")}"
+    }
+    if (project.hasProperty("android.injected.signing.store.password")) {
+        println "key store password: ${project.property("android.injected.signing.store.password")}"
+    }
+    if (project.hasProperty("android.injected.signing.key.alias")) {
+        println "key alias: ${project.property("android.injected.signing.key.alias")}"
+    }
+    if (project.hasProperty("android.injected.signing.key.password")) {
+        println "key password: ${project.property("android.injected.signing.key.password")}"
+    }
+}
+
 android {
     compileSdk 31
 
@@ -11,8 +26,8 @@ android {
         applicationId "br.infnet.tictacapp"
         minSdk 28
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "TicTacToe-3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,6 +42,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {

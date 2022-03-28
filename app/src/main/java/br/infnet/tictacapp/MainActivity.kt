@@ -17,22 +17,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-    lateinit var campo1 : ImageView
-    lateinit var campo2 : ImageView
-    lateinit var campo3 : ImageView
-    lateinit var campo4 : ImageView
-    lateinit var campo5 : ImageView
-    lateinit var campo6 : ImageView
-    lateinit var campo7 : ImageView
-    lateinit var campo8 : ImageView
-    lateinit var campo9 : ImageView
+    private lateinit var campo1 : ImageView
+    private lateinit var campo2 : ImageView
+    private lateinit var campo3 : ImageView
+    private lateinit var campo4 : ImageView
+    private lateinit var campo5 : ImageView
+    private lateinit var campo6 : ImageView
+    private lateinit var campo7 : ImageView
+    private lateinit var campo8 : ImageView
+    private lateinit var campo9 : ImageView
 
-    lateinit var layoutJog1 : LinearLayout
-    lateinit var layoutJog2 : LinearLayout
+    private lateinit var layoutJog1 : LinearLayout
+    private lateinit var layoutJog2 : LinearLayout
 
-    lateinit var goToHomeBtn : BottomNavigationItemView
-    lateinit var goToRankingBtn : BottomNavigationItemView
-    lateinit var doLogOutBtn : BottomNavigationItemView
+    private lateinit var goToHomeBtn : BottomNavigationItemView
+    private lateinit var goToRankingBtn : BottomNavigationItemView
+    private lateinit var doLogOutBtn : BottomNavigationItemView
 
 
     var player1 = 0
@@ -114,8 +114,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if(!gameActive)
             return
 
-        var btnClick = findViewById<ImageView>(v!!.id)
-        var clickedTag = Integer.parseInt(btnClick.tag.toString())
+        val btnClick = findViewById<ImageView>(v!!.id)
+        val clickedTag = Integer.parseInt(btnClick.tag.toString())
 
 
 
@@ -146,7 +146,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-        var winPos = arrayOf(intArrayOf(0,1,2), intArrayOf(3,4,5),intArrayOf(6,7,8),
+        val winPos = arrayOf(intArrayOf(0,1,2), intArrayOf(3,4,5),intArrayOf(6,7,8),
             intArrayOf(0,3,6), intArrayOf(1,4,7), intArrayOf(2,5,8),
             intArrayOf(0,4,8,), intArrayOf(2,4,6))
 

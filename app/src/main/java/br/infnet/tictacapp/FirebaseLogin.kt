@@ -29,8 +29,8 @@ class FirebaseLogin : AppCompatActivity() {
         //for user login
         findViewById<MaterialButton>(R.id.btLogin).setOnClickListener {
 
-            var email = findViewById<EditText>(R.id.etEmail).text.toString().trim()
-            var password = findViewById<EditText>(R.id.etPassword).text.toString()
+            val email = findViewById<EditText>(R.id.etEmail).text.toString().trim()
+            val password = findViewById<EditText>(R.id.etPassword).text.toString()
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener {
@@ -53,8 +53,8 @@ class FirebaseLogin : AppCompatActivity() {
         // for registering user
         findViewById<TextView>(R.id.btRegister).setOnClickListener {
 
-            var email = findViewById<EditText>(R.id.etEmail).text.toString().trim()
-            var password = findViewById<EditText>(R.id.etPassword).text.toString()
+            val email = findViewById<EditText>(R.id.etEmail).text.toString().trim()
+            val password = findViewById<EditText>(R.id.etPassword).text.toString()
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener {

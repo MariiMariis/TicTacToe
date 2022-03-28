@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import javax.security.auth.login.LoginException
 
 class splash_screen : AppCompatActivity() {
 

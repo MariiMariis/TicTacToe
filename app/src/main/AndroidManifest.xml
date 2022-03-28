@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_tictac_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacApp"
-        android:versionCode="1"
-        android:versionName="TicTacToe-1.0"
+        android:versionCode="3"
+        android:versionName="TicTacToe-3.0"
         >
 
         <activity
